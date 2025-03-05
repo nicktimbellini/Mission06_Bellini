@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="~/Mission06_Bellini.styles.css" asp-append-version="true" />
 </head>
 <body>
+
+
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
@@ -30,6 +32,16 @@
             </div>
         </nav>
     </header>
+
+    <nav>
+        <ul>
+            <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+            <li><a asp-controller="Home" asp-action="Joel">Get to Know Joel</a></li>
+            <li><a asp-controller="Movie" asp-action="Index">Movie Collection</a></li>
+            <li><a asp-controller="Movie" asp-action="Create">Add a Movie</a></li>
+        </ul>
+    </nav>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
