@@ -13,6 +13,10 @@ namespace Mission06_Bellini.Controllers
         {
             _context = context;
         }
+        public IActionResult Joel()
+        {
+            return View();
+        }
 
         public IActionResult Index()
         {
