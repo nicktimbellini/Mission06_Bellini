@@ -54,6 +54,35 @@ namespace Mission06_Bellini.Migrations
                     b.HasKey("MovieId");
 
                     b.ToTable("Movies");
+
+                    b.HasData(
+                        new
+                        {
+                            MovieId = 1,
+                            Category = "Sci-Fi",
+                            Director = "Christopher Nolan",
+                            Rating = "PG-13",
+                            Title = "Inception",
+                            Year = 2010
+                        },
+                        new
+                        {
+                            MovieId = 2,
+                            Category = "Action",
+                            Director = "Christopher Nolan",
+                            Rating = "PG-13",
+                            Title = "The Dark Knight",
+                            Year = 2008
+                        },
+                        new
+                        {
+                            MovieId = 3,
+                            Category = "Sci-Fi",
+                            Director = "Christopher Nolan",
+                            Rating = "PG-13",
+                            Title = "Interstellar",
+                            Year = 2014
+                        });
                 });
 #pragma warning restore 612, 618
         }

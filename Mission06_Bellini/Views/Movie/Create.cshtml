@@ -1,0 +1,36 @@
+﻿@model Mission06_Bellini.Models.Movie
+
+<h2>Add a Movie</h2>
+
+<form asp-action="Create">
+    <label>Title:</label>
+    <input asp-for="Title" required class="form-control" />
+
+    <label>Category:</label>
+    <input asp-for="Category" required class="form-control" />
+
+    <label>Year:</label>
+    <input asp-for="Year" type="number" required class="form-control" />
+
+    <label>Director:</label>
+    <input asp-for="Director" required class="form-control" />
+
+    <label>Rating:</label>
+    <select asp-for="Rating" class="form-control">
+        <option value="G">G</option>
+        <option value="PG">PG</option>
+        <option value="PG-13">PG-13</option>
+        <option value="R">R</option>
+    </select>
+
+    <label>Edited:</label>
+    <input asp-for="Edited" type="checkbox" />
+
+    <label>Lent To:</label>
+    <input asp-for="LentTo" class="form-control" />
+
+    <label>Notes (Max 25 chars):</label>
+    <input asp-for="Notes" maxlength="25" class="form-control" />
+
+    <button type="submit" class="btn btn-primary">Add Movie</button>
+</form>
