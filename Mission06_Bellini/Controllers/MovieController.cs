@@ -18,5 +18,27 @@ namespace Mission06_Bellini.Controllers
             var movies = _context.Movies.ToList();
             return View(movies);
         }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Movie movie)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Movies.Add(movie);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(movie);
+        }
+
     }
+
+
 }

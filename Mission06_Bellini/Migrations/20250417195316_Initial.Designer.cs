@@ -10,8 +10,8 @@ using Mission06_Bellini.Data;
 namespace Mission06_Bellini.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250305032856_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20250417195316_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,7 +33,7 @@ namespace Mission06_Bellini.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<bool?>("Edited")
+                    b.Property<bool>("Edited")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("LentTo")
@@ -64,6 +64,7 @@ namespace Mission06_Bellini.Migrations
                             MovieId = 1,
                             Category = "Sci-Fi",
                             Director = "Christopher Nolan",
+                            Edited = false,
                             Rating = "PG-13",
                             Title = "Inception",
                             Year = 2010
@@ -73,6 +74,7 @@ namespace Mission06_Bellini.Migrations
                             MovieId = 2,
                             Category = "Action",
                             Director = "Christopher Nolan",
+                            Edited = false,
                             Rating = "PG-13",
                             Title = "The Dark Knight",
                             Year = 2008
@@ -82,6 +84,7 @@ namespace Mission06_Bellini.Migrations
                             MovieId = 3,
                             Category = "Sci-Fi",
                             Director = "Christopher Nolan",
+                            Edited = false,
                             Rating = "PG-13",
                             Title = "Interstellar",
                             Year = 2014

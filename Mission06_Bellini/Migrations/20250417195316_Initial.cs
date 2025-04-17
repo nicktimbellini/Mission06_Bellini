@@ -7,7 +7,7 @@
 namespace Mission06_Bellini.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialMigration : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -23,7 +23,7 @@ namespace Mission06_Bellini.Migrations
                     Year = table.Column<int>(type: "INTEGER", nullable: false),
                     Director = table.Column<string>(type: "TEXT", nullable: false),
                     Rating = table.Column<string>(type: "TEXT", nullable: false),
-                    Edited = table.Column<bool>(type: "INTEGER", nullable: true),
+                    Edited = table.Column<bool>(type: "INTEGER", nullable: false),
                     LentTo = table.Column<string>(type: "TEXT", nullable: true),
                     Notes = table.Column<string>(type: "TEXT", maxLength: 25, nullable: true)
                 },
@@ -37,9 +37,9 @@ namespace Mission06_Bellini.Migrations
                 columns: new[] { "MovieId", "Category", "Director", "Edited", "LentTo", "Notes", "Rating", "Title", "Year" },
                 values: new object[,]
                 {
-                    { 1, "Sci-Fi", "Christopher Nolan", null, null, null, "PG-13", "Inception", 2010 },
-                    { 2, "Action", "Christopher Nolan", null, null, null, "PG-13", "The Dark Knight", 2008 },
-                    { 3, "Sci-Fi", "Christopher Nolan", null, null, null, "PG-13", "Interstellar", 2014 }
+                    { 1, "Sci-Fi", "Christopher Nolan", false, null, null, "PG-13", "Inception", 2010 },
+                    { 2, "Action", "Christopher Nolan", false, null, null, "PG-13", "The Dark Knight", 2008 },
+                    { 3, "Sci-Fi", "Christopher Nolan", false, null, null, "PG-13", "Interstellar", 2014 }
                 });
         }
 
