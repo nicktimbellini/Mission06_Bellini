@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Mission06_Bellini.Data;
 using Mission06_Bellini.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace Mission06_Bellini.Controllers
@@ -13,6 +14,7 @@ namespace Mission06_Bellini.Controllers
         {
             _context = context;
         }
+
         public IActionResult Joel()
         {
             return View();
@@ -20,8 +22,12 @@ namespace Mission06_Bellini.Controllers
 
         public IActionResult Index()
         {
-            var movies = _context.Movies.ToList(); //  Fetch movies from the database
-            return View(movies); //  Pass the movies to the view
+            var movies = _context.Movies
+                .Where(m => !string.IsNullOrEmpty(m.Title) && m.Year >= 1888)
+                .ToList();
+
+            return View(movies);
         }
+
     }
 }

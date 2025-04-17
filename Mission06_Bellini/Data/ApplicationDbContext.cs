@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Mission06_Bellini.Models;
 
-namespace Mission06_Bellini.Data // ✅ Ensure this matches your project namespace
+namespace Mission06_Bellini.Data
 {
     public class ApplicationDbContext : DbContext
     {
@@ -9,14 +9,12 @@ namespace Mission06_Bellini.Data // ✅ Ensure this matches your project namespa
 
         public DbSet<Movie> Movies { get; set; }
 
-        // ✅ Ensure OnModelCreating is inside the class, not outside!
+        public DbSet<Category> Categories { get; set; }  // ✅ Add this line for foreign key support
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Movie>().HasData(
-                new Movie { MovieId = 1, Title = "Inception", Category = "Sci-Fi", Year = 2010, Director = "Christopher Nolan", Rating = "PG-13", LentTo = null, Notes = null },
-                new Movie { MovieId = 2, Title = "The Dark Knight", Category = "Action", Year = 2008, Director = "Christopher Nolan", Rating = "PG-13", LentTo = null, Notes = null },
-                new Movie { MovieId = 3, Title = "Interstellar", Category = "Sci-Fi", Year = 2014, Director = "Christopher Nolan", Rating = "PG-13", LentTo = null, Notes = null }
-            );
+            
+            base.OnModelCreating(modelBuilder);
         }
-    } // ✅ This bracket correctly closes the class
+    }
 }

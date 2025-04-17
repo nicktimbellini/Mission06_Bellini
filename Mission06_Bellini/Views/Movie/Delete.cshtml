@@ -1,0 +1,17 @@
+﻿@model Mission06_Bellini.Models.Movie
+
+<h2>Confirm Delete</h2>
+
+<div class="alert alert-warning">
+    <h4>Are you sure you want to delete the following movie?</h4>
+    <hr />
+    <p><strong>Title:</strong> @Model.Title</p>
+    <p><strong>Year:</strong> @Model.Year</p>
+    <p><strong>Director:</strong> @Model.Director</p>
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="MovieId" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

@@ -1,31 +1,32 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Mission06_Bellini.Models // ✅ Ensure this matches your project name
+namespace Mission06_Bellini.Models
 {
     public class Movie
     {
         [Key]
         public int MovieId { get; set; }
 
-        [Required]
-        public string Title { get; set; } = string.Empty; //  Fix non-nullable warning
+        public int? CategoryId { get; set; } 
 
         [Required]
-        public string Category { get; set; } = string.Empty; // Fix non-nullable warning
+        public string Title { get; set; } = string.Empty;
 
         [Required]
-        public int? Year { get; set; }
+        [Range(1888, 3000)]
+        public int Year { get; set; }  // Made non-nullable + required
 
-        [Required]
-        public string Director { get; set; } = string.Empty; //  Fix non-nullable warning
+        public string? Director { get; set; }
 
-        [Required]
-        public string Rating { get; set; } = string.Empty; //  Fix non-nullable warning
+        public string? Rating { get; set; }
 
         public bool Edited { get; set; }
+
         public string? LentTo { get; set; }
 
         [StringLength(25)]
         public string? Notes { get; set; }
+
+        public bool CopiedToPlex { get; set; }
     }
 }
